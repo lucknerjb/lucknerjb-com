@@ -1,0 +1,20 @@
+<% @posts.each do |post| %>
+   <article class="post">
+      <a href="<%= post.relative_url %>" class="Article-Link">
+         <h2 class="post-title"><%= post.title %></h2>
+      </a>
+      <section class="post-excerpt">
+         <p><% post.content %></p>
+      </section>
+
+      <span class="post-meta">
+         <time datetime="<%= post.created_at.strftime("%Y-%m-%d") %>"><i><%= post.created_at.strftime("%B %d, %Y") %></i></time>
+      </span>
+   </article>
+<% end -%>
+
+
+<nav class="pagination hide" role="navigation">
+   <span class="page-number">Page 1 of 10</span>
+   <a class="older-posts" href="/blog/page/2/">Older Posts &rarr;</a>
+</nav>

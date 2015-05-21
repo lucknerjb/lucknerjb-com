@@ -1,0 +1,26 @@
+.copyright {
+   clear: both;
+}
+
+.top-menu a {
+   font-weight: normal;
+   display: inline-block;
+   padding: 5px 10px;
+}
+
+.post-footer {
+   margin-top: 40px;
+}
+
+.post-meta .profileimage {
+   top: -4px;
+   position: relative;
+}
+
+.main-image {
+   max-width: 200px;
+}
+
+sidebar img {
+   margin-top: 62px;
+}

@@ -1,14 +1,58 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Blog</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta name="viewport" content="width=device-width">
 
-<%= yield %>
+      <title>Luckner Jr | Full Stack Developer, Freelance Photographer &amp; Entrepreneur</title>
+      <%= csrf_meta_tags %>
+      <meta name="description" content="My personal blog" />
+      <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
 
-</body>
+      <script src="//use.typekit.net/gff5rgh.js"></script>
+      <script>try{Typekit.load();}catch(e){}</script>
+
+      <link rel="alternate" type="application/rss+xml" title="Luckner Jr Blog" href="/rss/">
+      <link rel="canonical" href="http://lucknerjb.com/" />
+   </head>
+   <body class="<%= @bodyClass %>">
+      <sidebar>
+         <a href="http://lucknerjb.com"><img src="<%= asset_url('me.jpg') %>" alt="Blog Logo" class="main-image"></a>
+         <div class="hide">
+            <h4>Subscribe</h4>
+            <a href="/rss">RSS <i class="fa fa-rss"></i></a>
+            <a href="#" id="showEmail" >Join our email newsletter <i class="fa fa-envelope-o"></i></a>
+            <%= form_for(:newsletter, html: {method: 'post'}) do |f| %>
+               <div class="input-group">
+                  <%= f.text_field :email, type: 'email', placeholder: 'Email Address' %>
+                  <div class="input-group-btn">
+                     <%= f.submit 'Sign Up Now', class: 'btn btn-default colored' %>
+                  </div>
+               </div>
+            <% end -%>
+         </div>
+      </sidebar>
+
+      <main>
+         <header>
+            <span><a href="http://lucknerjb.com">lucknerjb.com</a></span>
+
+            <div class="pull-right top-menu">
+               <a href="/">View Blog</a>
+               <a href="/admin/posts">Posts</a>
+               <a href="/admin/comments">Comments</a>
+               <a href="/logout">Logout</a>
+            </div>
+         </header>
+
+         <div class="col-md-12">
+            <%= yield %>
+         </div>
+
+         <header class="copyright">
+            <div>All content copyright <a href="http://lucknerjb.com">Luckner Jr.</a> &copy; 2015 &bull; All rights reserved.</div>
+         </header>
+      </main>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+   </body>
 </html>

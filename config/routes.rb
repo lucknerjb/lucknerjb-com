@@ -1,6 +1,21 @@
 Rails.application.routes.draw do
    root 'pages#index'
 
+   get '/about' => 'pages#about'
+
+   namespace :admin do
+      resources :posts
+   end
+   get '/posts/*path' => 'pages#post'
+
+   # ROUTES:
+   # - /about
+   # - /login
+   # - /logout
+   # - /admin
+      # - /posts
+      # - /
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

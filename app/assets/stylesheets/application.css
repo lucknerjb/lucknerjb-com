@@ -10,6 +10,12 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
+ *= require normalize
+ *= require font-awesome
+ *= require bootstrap
+ *= require bootstrap-wysihtml5
+ *= require screen
+ *= require prism
+ *= require custom
  *= require_self
  */

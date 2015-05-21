@@ -13,4 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require index
+//= require prism
+//= require wysihtml5-0.3.0
+//= require bootstrap3-wysihtml5
+//= require custom
 //= require_tree .
